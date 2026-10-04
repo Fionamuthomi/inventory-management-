@@ -24,7 +24,7 @@ inventory-manager/
 ## Installation
 
 ```bash
-git clone <your-repo-url> && cd inventory-manager
+git clone my repo&& cd inventory-manager
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -119,6 +119,6 @@ and CLI tests patch `requests.request`.
 ```bash
 git init && git add . && git commit -m "Initial commit: inventory API, CLI, tests"
 git branch -M main
-git remote add origin https://github.com/<you>/inventory-manager.git
+git remote add origin https://github.com/fiona/inventory-manager.git
 git push -u origin main
 ```

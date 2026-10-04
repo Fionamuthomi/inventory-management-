@@ -89,8 +89,9 @@ def cmd_update(a):
     body = {k: v for k, v in {"price": a.price, "stock": a.stock}.items() if v is not None}
     if not body:
         raise CLIError("Provide --price and/or --stock")
+    item = api("PATCH", f"/inventory/{a.id}", json=body)
     print("Updated.")
-    print_item(api("PATCH", f"/inventory/{a.id}", json=body))
+    print_item(item)
 
 
 def cmd_delete(a):
@@ -111,9 +112,9 @@ def cmd_find(a):
 
 
 def cmd_enrich(a):
+    item = api("POST", f"/inventory/{a.id}/enrich")
     print("Enriched.")
-    print_item(api("POST", f"/inventory/{a.id}/enrich"))
-
+    print_item(item)
 
 def build_parser():
     p = argparse.ArgumentParser(prog="cli", description="Inventory management CLI")
