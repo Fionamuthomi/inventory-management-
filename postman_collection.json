@@ -1,0 +1,18 @@
+{
+  "info": {"name": "Inventory API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key": "base", "value": "http://127.0.0.1:5000"}],
+  "item": [
+    {"name": "List inventory", "request": {"method": "GET", "url": "{{base}}/inventory"}},
+    {"name": "Low stock", "request": {"method": "GET", "url": "{{base}}/inventory?low_stock=10"}},
+    {"name": "Get item", "request": {"method": "GET", "url": "{{base}}/inventory/1"}},
+    {"name": "Add item (barcode)", "request": {"method": "POST", "url": "{{base}}/inventory",
+      "header": [{"key": "Content-Type", "value": "application/json"}],
+      "body": {"mode": "raw", "raw": "{\"barcode\": \"3017620422003\", \"price\": 4.99, \"stock\": 20}"}}},
+    {"name": "Update item", "request": {"method": "PATCH", "url": "{{base}}/inventory/1",
+      "header": [{"key": "Content-Type", "value": "application/json"}],
+      "body": {"mode": "raw", "raw": "{\"price\": 1.75, \"stock\": 75}"}}},
+    {"name": "Delete item", "request": {"method": "DELETE", "url": "{{base}}/inventory/1"}},
+    {"name": "Enrich item", "request": {"method": "POST", "url": "{{base}}/inventory/1/enrich"}},
+    {"name": "External lookup (name)", "request": {"method": "GET", "url": "{{base}}/external/product?name=almond milk"}}
+  ]
+}
