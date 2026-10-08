@@ -117,5 +117,5 @@ If the CLI says it can't reach the API, the server isn't running. Start it with
 internet needed:
 
 ```bash
-python demo.py
+python3 testy.py
 ```
