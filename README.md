@@ -56,9 +56,8 @@ Use the CLI from a second terminal (with the virtual environment activated).
 ```bash
 pytest
 ```
+![alt text](image-1.png)
 
-All tests should pass. They don't need the server or an internet connection, because
-OpenFoodFacts is replaced with fake responses.
 
 ## Item fields
 
@@ -87,21 +86,6 @@ OpenFoodFacts can't be reached.
 If a lookup fails but you gave a `product_name`, the item is still created and the
 response includes a `warnings` message.
 
-### Examples with curl
-
-```bash
-curl http://127.0.0.1:5000/inventory?low_stock=10
-
-curl -X POST http://127.0.0.1:5000/inventory \
-  -H "Content-Type: application/json" \
-  -d '{"product_name": "Fresh Bread", "price": 2.5, "stock": 15}'
-
-curl -X PATCH http://127.0.0.1:5000/inventory/1 \
-  -H "Content-Type: application/json" \
-  -d '{"stock": 75}'
-
-curl -X DELETE http://127.0.0.1:5000/inventory/1
-```
 
 ## Using the command-line tool
 
@@ -129,7 +113,7 @@ If the CLI says it can't reach the API, the server isn't running. Start it with
 
 ## Quick demo without a server
 
-`demo.py` runs through every endpoint and prints the results, with no server or
+`testy.py` runs through every endpoint and prints the results, with no server or
 internet needed:
 
 ```bash
