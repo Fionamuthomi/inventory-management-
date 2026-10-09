@@ -19,6 +19,8 @@ TEXT_FIELDS = ("product_name", "brands", "categories", "ingredients_text",
                "nutriscore_grade", "image_url", "barcode")
 
 
+#HELPER FUNCTIONS
+
 def store():
     return current_app.extensions["store"]
 

@@ -38,7 +38,7 @@ def api(method, path, **kwargs):
     return body
 
 
-# ---------- output helpers ----------
+#output helpers 
 def print_table(items):
     if not items:
         print("No items found.")
@@ -59,7 +59,7 @@ def print_item(item):
         print(f"warning           : {w}")
 
 
-# ---------- command handlers ----------
+#  command handlers 
 def cmd_list(a):
     params = {}
     if a.search:
